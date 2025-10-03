@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Operating Theory - Interactive Learning Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="flex justify-between items-center">
+                <h1>Data Operating Theory Mastery</h1>
+                <div class="progress-summary">
+                    <span class="progress-text">Overall Progress: <span id="overall-progress">0%</span></span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="overall-progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="dashboard">
+                <div class="dashboard-header">
+                    <h2>Your Learning Dashboard</h2>
+                    <p>Master data operating theory through interactive modules and practical exercises</p>
+                </div>
+
+                <div class="achievements-section">
+                    <h3>Your Achievements</h3>
+                    <div class="achievements-grid" id="achievements-grid">
+                        <!-- Achievements will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="modules-grid">
+                    <!-- Module cards will be populated by JavaScript -->
+                </div>
+
+                <div class="quick-access">
+                    <h3>Quick Access</h3>
+                    <div class="quick-access-buttons">
+                        <button class="btn btn--secondary" onclick="showGlossary()">
+                            📚 Glossary & Reference
+                        </button>
+                        <button class="btn btn--secondary" onclick="showFinalAssessment()">
+                            🏆 Final Assessment
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Module Content Section -->
+            <section id="module-content" class="module-content hidden">
+                <div class="module-header">
+                    <button class="btn btn--outline" onclick="goBackToDashboard()">← Back to Dashboard</button>
+                    <div class="module-progress">
+                        <span id="module-progress-text">Progress: 0%</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="module-progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="module-main">
+                    <div class="module-nav">
+                        <h3 id="module-title">Module Title</h3>
+                        <nav class="module-sections">
+                            <button class="section-btn active" data-section="learn" onclick="showSection('learn')">
+                                📖 Learn
+                            </button>
+                            <button class="section-btn" data-section="exercise" onclick="showSection('exercise')">
+                                🎯 Exercise
+                            </button>
+                            <button class="section-btn" data-section="quiz" onclick="showSection('quiz')">
+                                📝 Quiz
+                            </button>
+                        </nav>
+                    </div>
+
+                    <div class="module-section" id="learn-section">
+                        <div id="learn-content" class="learn-content">
+                            <!-- Learning content will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="module-section hidden" id="exercise-section">
+                        <div id="exercise-content" class="exercise-content">
+                            <!-- Exercise content will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="module-section hidden" id="quiz-section">
+                        <div id="quiz-content" class="quiz-content">
+                            <!-- Quiz content will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Glossary Section -->
+            <section id="glossary" class="glossary hidden">
+                <div class="section-header">
+                    <button class="btn btn--outline" onclick="goBackToDashboard()">← Back to Dashboard</button>
+                    <h2>Glossary & Reference</h2>
+                </div>
+                
+                <div class="glossary-search">
+                    <input type="text" class="form-control" placeholder="Search definitions..." id="glossary-search">
+                </div>
+
+                <div class="glossary-tabs">
+                    <button class="tab-btn active" data-tab="principles" onclick="showGlossaryTab('principles')">
+                        Data Principles
+                    </button>
+                    <button class="tab-btn" data-tab="quality" onclick="showGlossaryTab('quality')">
+                        Quality Issues
+                    </button>
+                    <button class="tab-btn" data-tab="observability" onclick="showGlossaryTab('observability')">
+                        Observability
+                    </button>
+                    <button class="tab-btn" data-tab="business" onclick="showGlossaryTab('business')">
+                        Business Terms
+                    </button>
+                </div>
+
+                <div class="glossary-content">
+                    <div id="principles-tab" class="glossary-tab active">
+                        <div id="principles-list" class="definition-list">
+                            <!-- Principles will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <div id="quality-tab" class="glossary-tab hidden">
+                        <div id="quality-list" class="definition-list">
+                            <!-- Quality issues will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <div id="observability-tab" class="glossary-tab hidden">
+                        <div id="observability-list" class="definition-list">
+                            <!-- Observability pillars will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    <div id="business-tab" class="glossary-tab hidden">
+                        <div id="business-list" class="definition-list">
+                            <!-- Business optimizations will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Assessment Section -->
+            <section id="final-assessment" class="final-assessment hidden">
+                <div class="section-header">
+                    <button class="btn btn--outline" onclick="goBackToDashboard()">← Back to Dashboard</button>
+                    <h2>Final Assessment</h2>
+                </div>
+                
+                <div class="assessment-info">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Demonstrate Your Mastery</h3>
+                            <p>Complete this comprehensive assessment to show your understanding of data operating theory. You need to score 80% or higher to earn your certification.</p>
+                            <div class="assessment-requirements">
+                                <h4>Prerequisites:</h4>
+                                <ul id="assessment-requirements">
+                                    <!-- Requirements will be populated by JavaScript -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="assessment-content" class="assessment-content">
+                    <!-- Assessment questions will be populated by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal for interactive exercises -->
+    <div id="exercise-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Interactive Exercise</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Modal content will be populated by JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--secondary" onclick="closeModal()">Close</button>
+                <button class="btn btn--primary" id="modal-submit" onclick="submitExercise()">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notifications -->
+    <div id="toast-container" class="toast-container">
+        <!-- Toast messages will be populated by JavaScript -->
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
